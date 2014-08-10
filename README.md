@@ -16,15 +16,9 @@ The Erlang/OTP release version that will be used to build and run your applicati
 
 Currently supported OTP versions:
 
-* master (R17B pre)
-* master-pu (R16B pre)
-* OTP_R15B
-* OTP_R15B01
-* OTP_R15B02
-* OTP_R16B
-* OTP_R16B01
-* OTP_R16B02
-* OTP_R16B03
+* master (17.1)
+* 17.1
+* 17
 
 To select the version for your app:
 
@@ -36,3 +30,11 @@ To select the version for your app:
     $ git push heroku master
 
 You may need to write a new commit and push if your code was already up to date.
+
+
+### ERTS Notes
+```
+./configure
+make
+make RELEASE_ROOT=~/17.0/otp -ik release
+```
