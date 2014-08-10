@@ -27,6 +27,7 @@ echo "-----> Using Erlang/OTP $ver"
     set -e
 
     # Already cached?
+    test -f ${build}/.no_cache && rm -rf ${cache}/* 
     test -f ${cache}/${tarball} && exit
 
     rm -rf ${cache}/* # be sure not to build up cruft
