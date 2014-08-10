@@ -58,6 +58,7 @@ if [ ! -e "rebar" ]; then
 fi
 
 echo "-----> Building with Rebar"
+test -f ${build}/.git_ssl_no_verify && export GIT_SSL_NO_VERIFY=true
 unset GIT_DIR
 ./rebar get-deps compile 2>&1 | sed -u 's/^/       /'
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
@@ -70,4 +71,5 @@ if [ -f ${bpdir}/opt/otp.sh ]; then
   cp ${bpdir}/opt/otp.sh ${PROFILE}
 fi
 
+unset GIT_SSL_NO_VERIFY
 echo "-----> Build succeeded"
