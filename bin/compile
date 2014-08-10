@@ -17,7 +17,7 @@ fi
 ver=${OTP_VERSION:=${DEFAULT_OTP_VERSION}}
 tarball=${ver}.tgz
 #OTP_TARBALL_URL="https://s3.amazonaws.com/heroku-buildpack-erlang/${tarball}"
-OTP_TARBALL_URL="https://github.com/zatonovo/heroku-erlang-binary/blob/master/${tarball}?raw=true"
+OTP_TARBALL_URL="https://raw.githubusercontent.com/zatonovo/heroku-erlang-binary/master/${tarball}"
 ERLROOT=${build}/otp
 PROFILE=${HOME}/.profile.d
 
