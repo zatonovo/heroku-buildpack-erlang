@@ -47,7 +47,7 @@ export PATH
 
 VERSION=$(erl -noshell -eval 'io:fwrite("~s\n", [erlang:system_info(otp_release)]).' -s erlang halt)
 echo "-------> Installed Erlang/OTP version $VERSION"
-echo $(erl -noshell -eval 'io:fwrite("~p\n", [maps:new()]).' -s erlang halt)
+#echo $(erl -noshell -eval 'io:fwrite("~p\n", [maps:new()]).' -s erlang halt)
 
 cd $build
 
