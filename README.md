@@ -26,7 +26,11 @@ To select the version for your app:
     $ echo 17.0 > .preferred_otp_version
     $ git commit -m "Select 17.0 as preferred OTP version" .preferred_otp_version
 
-Note that the run-time can be cached. If you wish to clear the cache, `touch .no_cache` in the base of your project directory.
+### Private git repositories (and `GIT_SSL_NO_VERIFY`)
+The buildpack now supports accessing git repositories with mismatching SSL certificates. In this situation git will fail due to the domain mismatch. Typically the solution is to set `GIT_SSL_NO_VERIFY=true` in your environment. Unforturnately, using the Heroku config system to set these variables doesn't work. Now you can simply `touch .git_ssl_no_verify` in your project base dir and enable this setting.
+
+### Managing the build cache
+The run-time can be cached on heroku. Typically this won't be an issue, but if you wish to clear the cache, `touch .no_cache` in the base of your project directory. Remove the file to resume cache behavior.
 
 ### Build your Heroku App
 
